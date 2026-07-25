@@ -36,3 +36,29 @@ for i in range(n-1):
     if not swap:
         break   
 print(nums)
+#count number of passes:
+nums=[1, 2, 3, 5, 4]
+n=len(nums)
+pass_count=0
+for i in range(n-1):
+    pass_count+=1
+    swap=False
+    for j in range(n-i-1):
+        if nums[j]>nums[j+1]:
+            nums[j],nums[j+1]=nums[j+1],nums[j]
+            swap=True
+    if not swap:
+        break
+print(pass_count)
+#Print the array after every pass
+nums=[1, 2, 3, 5, 4]
+n=len(nums)
+for i in range(n-1):
+    swap=False
+    for j in range(n-i-1):
+        if nums[j]>nums[j+1]:
+            nums[j],nums[j+1]=nums[j+1],nums[j]
+            swap=True
+    print(f"{i+1} : {nums}")
+    if not swap:
+        break
