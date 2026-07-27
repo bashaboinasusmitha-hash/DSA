@@ -97,3 +97,23 @@ for k in range(len(nums)-1):
         found=True
         break
 print(found)
+#Third maximum number:
+nums=[2,2,3,1]
+n=len(nums)
+for i in range(n-1):
+    swap=False
+    for j in range(n-i-1):
+        if nums[j]<nums[j+1]:
+            nums[j],nums[j+1]=nums[j+1],nums[j]
+            swap=True
+    if not swap:
+        break
+ans=1
+for k in range(1,len(nums)):
+    if nums[k]!=nums[k-1]:
+        ans+=1
+    if ans==3:
+        print(nums[k])
+        break
+else:
+    print(nums[0])
