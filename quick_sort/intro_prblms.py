@@ -20,3 +20,29 @@ def quick_sort(nums,low,high):
 nums=[8, 3, 1, 7, 0, 10, 2]
 quick_sort(nums,0,len(nums)-1)
 print(nums)
+#max prdct of two digits:
+n=31
+li=[]
+while n>0:
+    digits=n%10
+    li.append(digits)
+    n=n//10
+li.reverse()
+res=0
+for i in range(len(li)-1):
+    for j in range(i+1,len(li)):
+        ans=li[i]*li[j]
+        res=max(ans,res)
+print(res)
+#max subarray:
+nums=[-2,1,-3,4,-1,2,1,-5,4]
+n=len(nums)
+ans=[]
+res=0
+for i in range(n-1):
+    res+=nums[i]
+    for j in range(i,n):
+        temp=[]
+        for k in range(i,j+1):
+            temp.append(nums[k])
+        ans.append(temp)
