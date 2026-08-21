@@ -37,3 +37,20 @@ while temp:
     print(temp.data,end="->")
     temp=temp.next
 print("NULL")#10->20->30->NULL
+
+#adding a node at the beginning:
+class Node:
+    def __init__(self,val):
+        self.val=val
+        self.next=None
+#create list manually
+head=Node(200)
+head.next=Node(300)
+new_node=Node(100)
+new_node.next=head
+head=new_node
+temp=head
+while temp:
+    print(temp.val,end="->")
+    temp=temp.next  
+print("NULL")#100->200->300->NULL
