@@ -54,3 +54,23 @@ while temp:
     print(temp.val,end="->")
     temp=temp.next  
 print("NULL")#100->200->300->NULL
+
+#create node at end:
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+head=Node(100)
+head.next=Node(200)
+head.next.next=Node(300)
+new_node=Node(400)
+temp=head
+while temp.next:
+    temp=temp.next
+temp.next=new_node
+temp=head
+while temp:
+    print(temp.data,end="->")
+    temp=temp.next
+print("NULL")#100->200->300->400->NULL
+
