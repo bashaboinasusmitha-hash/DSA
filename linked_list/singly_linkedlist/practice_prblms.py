@@ -74,3 +74,30 @@ while temp:
     temp=temp.next
 print("NULL")#100->200->300->400->NULL
 
+#insert the node at particular position:
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+head=Node(10)
+head.next=Node(20)
+head.next.next=Node(40)
+#insert value:
+value=30
+pos=2
+new_node=Node(value)
+if pos==0:
+    new_node.next=head
+    head = new_node
+else:
+    temp=head
+    for i in range(pos-1):
+        temp=temp.next#temp becomes 20 (temp=10 now assigning temp.next to temp)
+    new_node.next=temp.next #(assigning the address of 40 to new node)
+    temp.next=new_node
+temp=head
+while temp:
+    print(temp.data,end="->")
+    temp=temp.next
+print("NULL")#10->20->30->40->NULL
+
