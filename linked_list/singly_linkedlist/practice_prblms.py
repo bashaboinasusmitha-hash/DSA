@@ -101,3 +101,29 @@ while temp:
     temp=temp.next
 print("NULL")#10->20->30->40->NULL
 
+#delete a node:
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+head=Node(10)
+head.next=Node(20)
+head.next.next=Node(40)
+head.next.next.next=Node(30)
+
+key=20
+temp=head
+prev=None
+while temp and temp.data!=key:
+    prev=temp
+    temp=temp.next
+if temp==head:
+    head=head.next
+elif temp:
+    prev.next=temp.next
+temp=head
+while temp:
+    print(temp.data,end="->")
+    temp=temp.next
+print("NULL")#20->40->30->NULL
+
