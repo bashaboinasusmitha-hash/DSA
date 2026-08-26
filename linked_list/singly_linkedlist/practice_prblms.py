@@ -143,3 +143,24 @@ while temp:
     temp=temp.next
 print("NULL")#20->40->30->NULL
 
+#delete a node at end:
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+head=Node(10)
+head.next=Node(20)
+head.next.next=Node(40)
+head.next.next.next=Node(30)
+temp=head
+prev=None
+while temp.next:
+    prev=temp
+    temp=temp.next
+prev.next=None
+temp=head
+while temp:
+    print(temp.data,end="->")
+    temp=temp.next
+print("NULL")#10->20->40->NULL
+
