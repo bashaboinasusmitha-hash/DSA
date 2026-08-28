@@ -179,3 +179,36 @@ while temp:
     ans+=1
     temp=temp.next
 print(ans)#4
+
+#finding the middle node:
+class Node:
+    def __init__(self,val):
+        self.val=val
+        self.next=None
+head=Node(1)
+head.next=Node(2)
+head.next.next=Node(3)
+head.next.next.next=Node(4)
+head.next.next.next.next=Node(5)
+head.next.next.next.next.next=Node(6)
+temp=head
+ans=0
+while temp:
+    ans+=1
+    temp=temp.next
+if ans%2!=0:    
+    mid=(ans+1)//2
+else:
+    mid=(ans)//2+1
+temp=head
+count=1
+while temp:
+    if count==mid:
+        break
+    temp=temp.next
+    count+=1
+while temp:
+    print(temp.val,end="->")
+    temp=temp.next
+print("NULL")
+
