@@ -212,3 +212,21 @@ while temp:
     temp=temp.next
 print("NULL")
 
+#delete the node:
+class Node:
+    def __init__(self,val):
+        self.val=val
+        self.next=None
+head=Node(4)
+head.next=Node(5)
+head.next.next=Node(1)
+head.next.next.next=Node(9)
+
+node=head.next
+node.val=node.next.val
+node.next=node.next.next
+temp=head
+while temp:
+    print(temp.val,end="->")
+    temp=temp.next
+print("NULL")#4->1->9->NULL=
