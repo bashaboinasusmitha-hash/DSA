@@ -49,3 +49,14 @@ if all_even or all_odd:
     print(True)
 else:
     print(False)
+#find the smallest number greater than target:
+letters=["c","f","j"]
+target = "c"
+ans=[]
+
+for i in letters:
+    if target<i:
+        ans.append(i)
+if len(ans)==0:
+    print(letters[0])
+print(min(ans))
