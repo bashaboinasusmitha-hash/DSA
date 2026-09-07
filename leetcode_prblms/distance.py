@@ -60,3 +60,28 @@ for i in letters:
 if len(ans)==0:
     print(letters[0])
 print(min(ans))
+#construct uniform parity II:
+nums1 = [4,6]
+n=len(nums1)
+nums2=[0]*n
+all_even=True
+for i in range(n):
+    if nums1[i]%2!=0:
+        all_even=False
+        break
+if all_even:
+    for i in range(n):
+        nums2[i]=nums1[i]
+    print(True)
+else:
+    smallest=min(nums1)
+    if smallest%2==1:
+        for i in range(n):
+            if nums1[i]%2==0:
+                nums2[i]=nums1[i]-smallest
+            else:
+                nums2[i]=nums1[i]
+        print(nums2)
+        print(True)
+    else:
+        print(False)
