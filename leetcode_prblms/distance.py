@@ -85,3 +85,38 @@ else:
         print(True)
     else:
         print(False)
+#search in rotated sorted array:
+nums=[4,5,6,7,0,1,2]
+target=0
+left=0
+right=len(nums)-1
+for i in range(n-1):
+    if nums[i]>nums[i+1]:
+        left=i+1
+while left<=right:
+    mid=(left+right)//2
+    if nums[mid]==target:
+        print(mid)
+        break
+    elif nums[mid]>target:
+        right=mid-1
+    else:
+        left=mid+1
+else:
+    print(-1)
+'''nums=[1]
+target=1
+n=len(nums)
+if n==1:
+    if nums[0]==target:
+        print()
+    else:
+        print(-1)
+for i in range(n-1):
+    if nums[i]>nums[i+1]:
+        if nums[i+1]==target:
+            print(i+1)
+        else:
+            i+=1
+    else:
+        print(-1)'''
