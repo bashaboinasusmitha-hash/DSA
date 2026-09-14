@@ -63,3 +63,61 @@ class Female(Human):
 female=Female()
 female.flirt()#I can flirt
 female.work()#I can work ,I can code
+#accessing the attributes using super():
+class Human:
+    def __init__(self):
+        self.num_eyes=2
+        self.num_nose=1
+    def eat(self):
+        print("I can eat")
+    def work(self):
+        print("I can work")
+class Female(Human):
+    def flirt(self):
+        print("I can flirt")
+    def work(self):
+        super().work()
+        print("I can code")
+female=Female()
+print(female.num_eyes)#2
+print(female.num_nose)#1
+#but if we define init() in derived class then we may not able to access the parent class attributes so we use super():
+class Human:
+    def __init__(self):
+        self.num_eyes=2
+        self.num_nose=1
+    def eat(self):
+        print("I can eat")
+    def work(self):
+        print("I can work")
+class Female(Human):
+    def __init__(self,name):
+        self.name=name
+    def flirt(self):
+        print("I can flirt")
+    def work(self):
+        super().work()
+        print("I can code")
+female=Female("Sushma")
+#print(female.num_eyes)#Female' object has no attribute 'num_eyes'
+class Human:
+    def __init__(self,num_heart):
+        self.num_eyes=2
+        self.num_nose=1
+        self.num_heart=num_heart
+    def eat(self):
+        print("I can eat")
+    def work(self):
+        print("I can work")
+class Female(Human):
+    def __init__(self,name,heart):
+        super().__init__(heart)
+        self.name=name
+    def flirt(self):
+        print("I can flirt")
+    def work(self):
+        super().work()
+        print("I can code")
+female=Female("Sushma",1)
+print(female.num_eyes)#2
+print(female.num_heart)#1
