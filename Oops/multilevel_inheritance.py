@@ -32,3 +32,52 @@ boy_1=Boy()
 boy_1.work()#I can test
 print(Boy.mro())#[<class '__main__.Boy'>, <class '__main__.Male'>, <class '__main__.Human'>, <class 'object'>]
 #
+class Human:
+    def eat(self):
+        print("I can eat")
+    def work(self):
+        print("I can work")
+class Male(Human):
+    def sleep(self):
+        print("I can sleep")
+    def work(self):
+            print("I can code")
+class Boy(Male):
+    def draw(self):
+        print("I can draw")
+    def work(self):
+        super().work()
+        print("I can test")
+boy_1=Boy()
+boy_1.work()#I can code,I can test
+#attributes accessing:
+class Human:
+    hands=2
+    def __init__(self,num_heart):
+        self.num_eyes=2
+        self.num_nose=1
+        self.heart=num_heart
+    def eat(self):
+        print("I can eat")
+    def work(self):
+        print("I can work")
+class Male(Human):
+    def __init__(self,name):
+        self.name=name
+    def sleep(self):
+        print("I can sleep")
+    def work(self):
+            print("I can code")
+class Boy(Male):
+    def __init__(self, heart,name,language):
+        Human.__init__(self,heart)
+        Male.__init__(self,name)
+        self.languague=language
+    def draw(self):
+        print("I can draw")
+    def work(self):
+        print("I can test")
+boy_1=Boy(1,"Susmitha","Python")
+print(boy_1.num_nose)#1
+print(boy_1.name)#Susmitha
+print(boy_1.hands)#2
