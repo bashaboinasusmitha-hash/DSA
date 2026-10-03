@@ -8,3 +8,4 @@ for i in range(n-1):
             arr[i]+=abs(i-j)
             arr[j]+=abs(i-j)
 print(arr)
+print("hello")
